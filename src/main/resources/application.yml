@@ -1,0 +1,37 @@
+debug: false # ??? ?? ??? ??
+
+# actuator ??
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+# logging ??
+logging:
+  level:
+    com.kevin.boardproject: debug # root ??? ??
+    org.springframework.web.servlet: debug
+    org.hibernate.type.descriptor.sql: trace # ???? ? ??
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/board
+    username: kevin
+    password: test1234!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    defer-datasource-initialization: true # data.sql 사용해서 초기화
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true #
+        default_batch_fetch_size: 100 # ??? n+1 ??
+  h2:
+    console:
+      enabled: false
+  sql:
+    init:
+      mode: always
