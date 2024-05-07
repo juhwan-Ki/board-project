@@ -16,6 +16,9 @@ logging:
 
 spring:
   datasource:
+#    username: sa
+#    url: jdbc:h2:mem:testdb
+#    driver-class-name: org.h2.Driver
     url: jdbc:mysql://localhost:3306/board
     username: kevin
     password: test1234!
@@ -29,9 +32,10 @@ spring:
       hibernate:
         format_sql: true #
         default_batch_fetch_size: 100 # ??? n+1 ??
-  h2:
-    console:
-      enabled: false
+#  h2:
+#    console:
+#      enabled: true
+#      path: /h2-console
   sql:
     init:
       mode: always
