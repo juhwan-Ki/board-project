@@ -43,3 +43,5 @@ spring:
     rest:
       base-path: /api
       detection-strategy: annotated # annotation으로 지정한 repository만 api 노출시킴
+  thymeleaf3:
+    decoupled-logic: true
